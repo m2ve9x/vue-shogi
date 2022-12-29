@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import Board from '@/views/Board.vue';
