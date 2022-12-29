@@ -1,5 +1,17 @@
 <script setup lang="ts">
 import type { Piece } from '@/domain/piece/piece';
+import { reactive, ref } from 'vue';
+
+let isClicked = ref(false);
+const clickSquare: () => void = () => {
+    isClicked.value = !isClicked.value;
+    console.log(isClicked.value);
+
+}
+const squareClass: () => string = () => {
+    console.log(isClicked.value);
+    return isClicked.value ? "clicked" : ''
+}
 
 const props = withDefaults(defineProps<{
     piece: Piece | undefined,
@@ -7,7 +19,6 @@ const props = withDefaults(defineProps<{
     piece: undefined,
 })
 const isNotHavePiece: () => string = () => {
-    console.log(props.piece);
     if (props.piece === void 0) {
         return 'blank'
     }
@@ -16,7 +27,7 @@ const isNotHavePiece: () => string = () => {
 </script>
 
 <template>
-    <div class="piece">
+    <div class="piece" @click="clickSquare" :class="squareClass()">
         <div>
             {{ piece?.name() }}
         </div>
@@ -40,6 +51,10 @@ const isNotHavePiece: () => string = () => {
     font-size: 1.5rem;
     border-radius: 50%;
     z-index: 10;
+}
+
+.piece.clicked {
+    background-color: gray;
 }
 
 .blank {
