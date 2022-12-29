@@ -3,13 +3,13 @@
  */
 
 import { describe, it, expect } from 'vitest'
-import { mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import Board from '@/views/Board.vue';
-
+import Square from '@/views/Square.vue';
 
 describe('Board', () => {
   it('renders properly', () => {
-    const wrapper = mount(Board)
-    expect(wrapper.text()).toContain('歩')
+    const wrapper = shallowMount(Board)
+    expect(wrapper.findAllComponents({ name: "Square" })).toHaveLength(54);
   })
 })
