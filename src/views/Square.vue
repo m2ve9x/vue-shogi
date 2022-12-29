@@ -10,6 +10,6 @@ const props = withDefaults(defineProps<{
 
 <template>
     <div>
-        {{ piece?.name }}
+        {{ piece?.name() }}
     </div>
 </template>

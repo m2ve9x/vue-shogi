@@ -4,10 +4,14 @@ import Board from './views/Board.vue';
 
 <template>
   <header>
+
+  </header>
+
+  <body>
     <div class="wrapper">
       <Board />
     </div>
-  </header>
+  </body>
 </template>
 
 <style scoped>
