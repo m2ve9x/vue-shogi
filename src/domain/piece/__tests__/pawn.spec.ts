@@ -7,8 +7,8 @@ import { mount } from '@vue/test-utils'
 import type { Piece } from '../piece'
 import { Pawn } from '../pawn'
 
-describe('HelloWorld', () => {
-    it('renders properly', () => {
+describe('pawn', () => {
+    it('name', () => {
         const pawn: Piece = new Pawn();
         expect(pawn.name()).toContain('pawn');
     })

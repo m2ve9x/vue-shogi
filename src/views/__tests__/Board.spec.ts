@@ -7,7 +7,7 @@ import { mount } from '@vue/test-utils'
 import Board from '@/views/Board.vue';
 
 
-describe('HelloWorld', () => {
+describe('Board', () => {
   it('renders properly', () => {
     const wrapper = mount(Board)
     expect(wrapper.text()).toContain('Hello World')
