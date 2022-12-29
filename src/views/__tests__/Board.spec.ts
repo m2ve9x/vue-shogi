@@ -10,6 +10,6 @@ import Square from '@/views/Square.vue';
 describe('Board', () => {
   it('renders properly', () => {
     const wrapper = shallowMount(Board)
-    expect(wrapper.findAllComponents({ name: "Square" })).toHaveLength(54);
+    expect(wrapper.findAllComponents(Square)).toHaveLength(54);
   })
 })
