@@ -10,6 +10,6 @@ import { Pawn } from '../pawn'
 describe('pawn', () => {
     it('name', () => {
         const pawn: Piece = new Pawn();
-        expect(pawn.name()).toContain('pawn');
+        expect(pawn.name()).toContain('歩');
     })
 })

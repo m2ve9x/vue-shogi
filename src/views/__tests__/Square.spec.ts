@@ -23,6 +23,6 @@ describe('Square', () => {
                 piece: new Pawn()
             }
         })
-        expect(wrapper.text()).toContain('pawn')
+        expect(wrapper.text()).toContain('歩')
     })
 })

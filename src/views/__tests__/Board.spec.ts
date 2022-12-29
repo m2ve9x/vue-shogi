@@ -10,6 +10,6 @@ import Board from '@/views/Board.vue';
 describe('Board', () => {
   it('renders properly', () => {
     const wrapper = mount(Board)
-    expect(wrapper.text()).toContain('Hello World')
+    expect(wrapper.text()).toContain('歩')
   })
 })
