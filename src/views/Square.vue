@@ -49,12 +49,11 @@ const isNotHavePiece: () => string = () => {
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
-    border-radius: 50%;
     z-index: 10;
 }
 
 .piece.clicked {
-    background-color: gray;
+    background: linear-gradient(90deg, gray 50%, black 50%);
 }
 
 .blank {
