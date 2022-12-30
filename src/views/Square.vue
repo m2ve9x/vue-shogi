@@ -5,11 +5,9 @@ import { reactive, ref } from 'vue';
 let isClicked = ref(false);
 const clickSquare: () => void = () => {
     isClicked.value = !isClicked.value;
-    console.log(isClicked.value);
-
 }
+
 const squareClass: () => string = () => {
-    console.log(isClicked.value);
     return isClicked.value ? "clicked" : ''
 }
 
@@ -18,6 +16,7 @@ const props = withDefaults(defineProps<{
 }>(), {
     piece: undefined,
 })
+
 const isNotHavePiece: () => string = () => {
     if (props.piece === void 0) {
         return 'blank'
