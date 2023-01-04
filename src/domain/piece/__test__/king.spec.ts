@@ -3,12 +3,12 @@
  */
 
 import { describe, it, expect } from 'vitest'
+import { King } from '../king'
 import type { Piece } from '../piece'
-import { Pawn } from '../pawn'
 
-describe('pawn', () => {
+describe('king', () => {
     it('name', () => {
-        const pawn: Piece = new Pawn();
-        expect(pawn.name()).toContain('歩');
+        const king: Piece = new King();
+        expect(king.name()).toContain('王');
     })
 })
