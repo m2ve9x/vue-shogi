@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import { SelectPieceEvent } from '@/domain/events/selectPieceEvent';
 import type { Piece } from '@/domain/piece/piece';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { reactive, ref } from 'vue';
 
 let isClicked = ref(false);
 const clickSquare: () => void = () => {
     isClicked.value = !isClicked.value;
+    emit("selectPiece");
 }
 
 const squareClass: () => string = () => {
@@ -16,6 +19,10 @@ const props = withDefaults(defineProps<{
 }>(), {
     piece: undefined,
 })
+
+const emit = defineEmits<{
+    (event: "selectPiece"): void;
+}>();
 
 const isNotHavePiece: () => string = () => {
     if (props.piece === void 0) {

@@ -1,4 +1,4 @@
-import type { SelectPieceEvents } from "../events/selectPieceEvent";
+import type { SelectPieceEvent } from "../events/selectPieceEvent";
 import { Gold } from "../piece/gold";
 import { King } from "../piece/king";
 import { Knight } from "../piece/knight";
@@ -28,7 +28,7 @@ export class Board {
         ];
     }
 
-    createBoard(selectPieceEvents: SelectPieceEvents) {
+    createBoard(selectPieceEvents: SelectPieceEvent) {
     }
 
     getPieces(): (Piece | undefined)[][] {

@@ -1,6 +1,6 @@
 import type { Piece } from "../piece/piece";
 
-export class SelectPieceEvents {
+export class SelectPieceEvent {
     pointX: number;
     pointY: number;
     piece: Piece;
