@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Board } from '@/domain/board/Board';
 import { Gold } from '@/domain/piece/gold';
 import { King } from '@/domain/piece/king';
 import { Knight } from '@/domain/piece/knight';
@@ -10,22 +11,12 @@ import { onMounted } from 'vue';
 import Square from './Square.vue';
 
 const piece = new Pawn();
-let pieces: (Piece | undefined)[][] = [
-    [new Lance(), new Knight(), new Silver(), new Gold(), new King(), new Gold(), new Silver(), new Knight(), new Lance(),],
-    [new Pawn(), new Pawn(), new Pawn(), new Pawn(), new Pawn(), new Pawn(), new Pawn(), new Pawn(), new Pawn(),],
-    [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined,],
-    [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined,],
-    [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined,],
-    [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined,],
-    [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined,],
-    [new Pawn(), new Pawn(), new Pawn(), new Pawn(), new Pawn(), new Pawn(), new Pawn(), new Pawn(), new Pawn(),],
-    [new Lance(), new Knight(), new Silver(), new Gold(), new King(), new Gold(), new Silver(), new Knight(), new Lance(),],
-];
+let board: Board = new Board();
 </script>
 
 <template>
     <div>
-        <div class="rows" v-for="piecerows in pieces" onclick="">
+        <div class="rows" v-for="piecerows in board.getPieces()" onclick="">
             <Square v-for="piece in piecerows" :piece="piece">
             </Square>
         </div>
