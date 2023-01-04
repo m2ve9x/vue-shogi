@@ -8,8 +8,8 @@ import Board from '@/views/Board.vue';
 import Square from '@/views/Square.vue';
 
 describe('Board', () => {
-  it('renders properly', () => {
+  it('initialize', () => {
     const wrapper = shallowMount(Board)
-    expect(wrapper.findAllComponents(Square)).toHaveLength(54);
+    expect(wrapper.findAllComponents(Square)).toHaveLength(81);
   })
 })
